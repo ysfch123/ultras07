@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ultras Sfaxiens Shop</title>
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="header-content">
+      <img src="ultras-sfaxiens-logo.jpg" alt="Ultras Sfaxiens Logo" class="header-logo">
+      <h1 class="site-title">Ultras Sfaxiens</h1>
+      <nav class="main-nav">
+        <a href="index.html">Intro</a>
+        <a href="history.html">History of the Sfaxiens</a>
+        <a href="tifos.html">Made in 07</a>
+        <a href="join.html">Join</a>
+        <a href="shop.html" class="active">Shop</a>
+        <a href="centre-ville.html">C.VILLE 07</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <h2 class="shop-title">Ultras Shop</h2>
+    <div class="shop-layout">
+      <div class="cart-panel" id="cartPanel">
+        <h3>🛒 Your Cart</h3>
+        <ul id="cartList"></ul>
+        <div class="cart-total">
+          Total: <span id="cartTotal">0</span> TND
+        </div>
+        <button id="buyNow" class="buy-btn">Buy Now</button>
+      </div>
+      <div class="products-grid">
+
+        <!-- Product: Ultras Sfaxiens Pullover -->
+        <div class="product-card" data-id="1">
+          <img src="img/485880149_1038769978287726_1121218210615509665_n.jpg" alt="Ultras Sfaxiens Pullover" class="product-img" />
+          <div class="product-info">
+            <h3 class="product-name">Ultras Sfaxiens Pullover</h3>
+            <p class="product-desc">
+              Traditions from Sfax for Sfax by La Grande Famiglia.<br>
+              تقاليد من صفاقس لأجل صفاقس عبر العائلة الكبيرة
+            </p>
+            <div class="product-bottom">
+              <span class="product-price">80 TND</span>
+              <span class="size-wrap">
+                <label for="size-1" class="size-label">Size:</label>
+                <select id="size-1" class="product-size">
+                  <option>S</option>
+                  <option>M</option>
+                  <option>L</option>
+                  <option>XL</option>
+                </select>
+              </span>
+              <button class="add-cart-btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product: Ultras T-Shirt (BackToTheRoot) -->
+        <div class="product-card" data-id="2">
+          <img src="img/484305604_1031415949023129_2459273540351881396_n.jpg" alt="Ultras T-Shirt" class="product-img" />
+          <div class="product-info">
+            <h3 class="product-name">Ultras T-Shirt</h3>
+            <p class="product-desc">
+              ULTRAS 2007, Sfaxiens, Anarchistes, Antifascistes. #BackToTheRoot
+            </p>
+            <div class="product-bottom">
+              <span class="product-price">60 TND</span>
+              <span class="size-wrap">
+                <label for="size-2" class="size-label">Size:</label>
+                <select id="size-2" class="product-size">
+                  <option>S</option>
+                  <option>M</option>
+                  <option>L</option>
+                  <option>XL</option>
+                </select>
+              </span>
+              <button class="add-cart-btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product: Ultras Flag -->
+        <div class="product-card" data-id="3">
+          <img src="img/485113370_1036781235153267_7057218103526417137_n.jpg" alt="Ultras Flag" class="product-img" />
+          <div class="product-info">
+            <h3 class="product-name">membership cards</h3>
+            <p class="product-desc">تعلن مجموعتنا عن اصدار بطاقتي عضويّة هذا الموسم. من صفاقس الى صفاقس!</p>
+            <div class="product-bottom">
+              <span class="product-price">25 TND</span>
+              <span class="size-wrap size-placeholder"></span>
+              <button class="add-cart-btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product: Ultras T-Shirt (Classic) -->
+        <div class="product-card" data-id="4">
+          <img src="img/505193264_2784458661764858_6797664536363732739_n.jpg" alt="Ultras T-Shirt Classic" class="product-img" />
+          <div class="product-info">
+            <h3 class="product-name">Ultras jacket</h3>
+            <p class="product-desc">ONE ROOT,ULTRAS SFAXIENS.</p>
+            <div class="product-bottom">
+              <span class="product-price">100 TND</span>
+              <span class="size-wrap">
+                <label for="size-4" class="size-label">Size:</label>
+                <select id="size-4" class="product-size">
+                  <option>S</option>
+                  <option>M</option>
+                  <option>L</option>
+                  <option>XL</option>
+                </select>
+              </span>
+              <button class="add-cart-btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" data-id="3">
+            <img src="img/481471417_1023493603148697_4986836151674726031_n.jpg" alt="Ultras Flag" class="product-img" />
+            <div class="product-info">
+              <h3 class="product-name">membership cards</h3>
+              <p class="product-desc">نظرة أدقّ لعمل فنيّ راقٍ كسابقه من الأعمال.
+                #مجرّد_بطاقة
+                </p>
+              <div class="product-bottom">
+                <span class="product-price">25 TND</span>
+                <span class="size-wrap size-placeholder"></span>
+                <button class="add-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+        <!-- Add more products below as needed -->
+      </div>
+    </div>
+  </main>
+  <script src="shop.js"></script>
+</body>
+</html>

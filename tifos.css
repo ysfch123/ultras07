@@ -1,0 +1,152 @@
+body {
+    background: #18191a;
+    color: #ededed;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .main-header {
+    background: #101010;
+    box-shadow: 0 2px 12px #0008;
+    margin-bottom: 24px;
+  }
+  .header-content {
+    display: flex;
+    align-items: center;
+    padding: 24px 36px 18px 36px;
+  }
+  .header-logo {
+    height: 56px;
+    width: 56px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #fff;
+    margin-right: 24px;
+  }
+  .site-title {
+    font-size: 2em;
+    font-weight: 900;
+    margin: 0 32px 0 0;
+    color: #ededed;
+    letter-spacing: 0.04em;
+  }
+  .main-nav {
+    margin-left: auto;
+    display: flex;
+    gap: 18px;
+  }
+  .main-nav a {
+    color: #ededed;
+    border: 2px solid #ededed;
+    border-radius: 18px;
+    padding: 6px 22px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    background: transparent;
+    transition: background 0.15s, color 0.15s, border 0.15s;
+  }
+  .main-nav a.active,
+  .main-nav a:hover {
+    background: #ededed;
+    color: #18191a;
+    border-color: #ededed;
+  }
+  
+  .tifos-title {
+    text-align: center;
+    color: #ededed;
+    font-size: 2.2em;
+    font-weight: 900;
+    margin-bottom: 2em;
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 16px #000a;
+  }
+  
+  .tifo-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .tifo-card {
+    background: #222;
+    border-radius: 24px;
+    padding: 1.5em 1.5em 1.5em 2em;
+    box-shadow: 0 6px 40px #000c, 0 1.5px 4px #ededed13;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    position: relative;
+    transition: box-shadow 0.18s, transform 0.18s;
+    cursor: pointer;
+  }
+  .tifo-card:hover {
+    box-shadow: 0 12px 60px #000e, 0 4px 12px #ededed22;
+    transform: translateY(-3px) scale(1.012);
+  }
+  
+  .tifo-date {
+    position: absolute;
+    left: -2.5em;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #18191a;
+    color: #ededed;
+    font-weight: bold;
+    font-size: 1.4em;
+    border: 2px solid #ededed;
+    border-radius: 1em;
+    padding: 0.25em 1.1em;
+    box-shadow: 0 2px 8px #0007;
+    z-index: 2;
+  }
+  
+  .tifo-img-container {
+    flex-shrink: 0;
+    width: 320px;
+    max-width: 40vw;
+    height: 180px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #111;
+    box-shadow: 0 4px 24px #0006;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tifo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.22s;
+  }
+  .tifo-card:hover .tifo-img {
+    
+    filter: brightness(1.13) contrast(1.08);
+    transform: scale(1.02);
+  }
+  
+  .tifo-info {
+    flex: 1;
+    color: #ededed;
+  }
+  .tifo-info h3 {
+    margin: 0 0 0.5em 0;
+    font-size: 1.4em;
+    color: #ededed;
+    text-shadow: 0 2px 8px #000a;
+  }
+  .tifo-info p {
+    margin: 0;
+    font-size: 1.08em;
+    color: #c1c1c1;
+  }
+  @media (max-width: 700px) {
+    .tifo-timeline { gap: 1em; }
+    .tifo-card { flex-direction: column; align-items: flex-start; padding: 1.25em; }
+    .tifo-date { left: 1.5em; top: 1.1em; transform: none; position: static; margin-bottom: 0.8em; }
+    .tifo-img-container { width: 100%; max-width: 100vw; height: 160px; }
+  }

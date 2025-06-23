@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Join Ultras Sfaxiens</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+          <h1 class="site-title">Join the Ultras Sfaxiens</h1>
+          <nav class="main-nav">
+            <a href="index.html">Intro</a>
+            <a href="history.html">History of the Sfaxiens</a>
+            <a href="tifos.html">Made in 07</a>
+            <a href="join.html">Join</a>
+            <a href="shop.html">Shop</a>
+            <a href="centre-ville.html">C.VILLE 07</a>
+          </nav>
+        </div>
+      </header>
+  <main class="container">
+    <section class="join-section reveal">
+      <div class="join-card">
+        <h2 class="highlight">Registration Form</h2>
+        <form id="joinForm" autocomplete="off" novalidate>
+          <div class="form-section">
+            <h3>Your Personal Information</h3>
+            <div class="form-row">
+              <label>First Name
+                <input type="text" name="firstname" required maxlength="32" placeholder="Enter your first name">
+              </label>
+              <label>Last Name
+                <input type="text" name="lastname" required maxlength="32" placeholder="Enter your last name">
+              </label>
+            </div>
+            <div class="form-row">
+              <label>Date of Birth
+                <input type="date" name="dob" required>
+              </label>
+              <label>Age
+                <input type="number" name="age" min="10" max="100" required placeholder="Your age">
+              </label>
+            </div>
+            <label>Address
+              <input type="text" name="address" maxlength="64" placeholder="Your address">
+            </label>
+            <label>What do you do in life?
+              <input type="text" name="job" maxlength="40" placeholder="e.g. Student, Engineer">
+            </label>
+            <label>Your Phone Number
+              <input type="tel" name="number" pattern="^\+?\d{8,15}$" required placeholder="e.g. +216XXXXXXXX">
+            </label>
+          </div>
+          <div class="form-section">
+            <h3>Your Personal Knowledge</h3>
+            <label>What do you know about CSS?
+              <textarea name="css_knowledge" rows="2" maxlength="255" required placeholder="Your answer"></textarea>
+            </label>
+            <label>What do you know about the Ultras Sfaxiens?
+              <textarea name="ultras_knowledge" rows="2" maxlength="255" required placeholder="Your answer"></textarea>
+            </label>
+          </div>
+          <div id="form-errors"></div>
+          <button type="submit" class="cta-btn">Submit Application</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

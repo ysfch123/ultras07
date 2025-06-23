@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Ultras Sfaxiens</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <img src="ultras-sfaxiens-logo.jpg" alt="Ultras Sfaxiens Logo" class="ultras-logo" style="height:80px; margin-bottom: 1em;">
+    <h1>Ultras Sfaxiens</h1>
+    <form id="loginForm">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" required autocomplete="off">
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+      </div>
+      <button type="submit" class="login-btn">Login</button>
+      <div class="error-message" id="errorMsg"></div>
+    </form>
+  </div>
+  <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout - Ultras Sfaxiens Shop</title>
+  <link rel="stylesheet" href="shop.css">
+  <style>
+    .checkout-card {
+      background: #191a1f;
+      border-radius: 22px;
+      box-shadow: 0 6px 40px #000c, 0 1.5px 4px #ededed18;
+      border: 2.5px solid #ededed;
+      max-width: 480px;
+      margin: 3em auto;
+      padding: 2em 2.2em;
+      color: #ededed;
+    }
+    .checkout-card h2 {
+      text-align: center;
+      color: #ededed;
+      margin-bottom: 1em;
+    }
+    .checkout-card label {
+      display: block;
+      margin-bottom: 0.6em;
+      font-weight: 600;
+    }
+    .checkout-card input, .checkout-card select {
+      width: 100%;
+      padding: 0.65em;
+      margin-bottom: 1em;
+      border-radius: 8px;
+      border: 1.5px solid #ededed;
+      background: #232325;
+      color: #ededed;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+    .order-summary {
+      background: #232325;
+      border-radius: 12px;
+      padding: 1em;
+      margin-bottom: 2em;
+      color: #ededed;
+      border: 1px solid #ededed33;
+    }
+    .order-summary ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .order-summary li {
+      margin-bottom: 0.4em;
+    }
+    .order-summary .total {
+      font-weight: bold;
+      margin-top: 1em;
+      text-align: right;
+    }
+    .order-summary .shipping {
+      color: #ffad18;
+      font-weight: 600;
+    }
+    .checkout-card .buy-btn {
+      width: 100%;
+      margin-top: 1em;
+    }
+    .confirmation-message {
+      background: #151517;
+      border-radius: 14px;
+      padding: 2em 1em;
+      text-align: center;
+      color: #ededed;
+      font-size: 1.1em;
+      border: 2px solid #ededed33;
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="header-content">
+      <img src="ultras-sfaxiens-logo.jpg" alt="Ultras Sfaxiens Logo" class="header-logo">
+      <h1 class="site-title">Ultras Sfaxiens</h1>
+    </div>
+  </header>
+  <main>
+    <div class="checkout-card">
+      <h2>Checkout</h2>
+      <div class="order-summary" id="checkoutSummary"></div>
+      <form id="checkoutForm" autocomplete="off">
+        <label>
+          First Name:
+          <input type="text" name="firstName" required />
+        </label>
+        <label>
+          Last Name:
+          <input type="text" name="lastName" required />
+        </label>
+        <label>
+          Address:
+          <input type="text" name="address" required />
+        </label>
+        <label>
+          Country:
+          <input type="text" name="country" required />
+        </label>
+        <label>
+          City:
+          <input type="text" name="city" required />
+        </label>
+        <label>
+          Phone Number:
+          <input type="tel" name="phone" required pattern="[0-9+\-\s]{6,}" />
+        </label>
+        <button type="submit" class="buy-btn">Confirm Order</button>
+      </form>
+      <div class="confirmation-message" id="confirmationMessage" style="display:none;"></div>
+    </div>
+  </main>
+  <script>
+    // --- CART SUMMARY ---
+    const summaryDiv = document.getElementById('checkoutSummary');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let subtotal = 0;
+    summaryDiv.innerHTML = '<strong>Order Summary:</strong><ul>' +
+      cart.map(item => {
+        subtotal += item.price * item.quantity;
+        return `<li>${item.name} x${item.quantity} ${item.size ? '(Size: ' + item.size + ')' : ''} <span style="float:right">${item.price * item.quantity} TND</span></li>`;
+      }).join('') +
+      '</ul>' +
+      `<div class="shipping">Shipping: <span style="float:right">7.00 TND</span></div>` +
+      `<div class="total">Total: <span>${(subtotal + 7).toFixed(2)} TND</span></div>`;
+
+    // --- FORM HANDLING ---
+    document.getElementById('checkoutForm').onsubmit = function(e) {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(this).entries());
+      const confirmation = document.getElementById('confirmationMessage');
+      confirmation.innerHTML =
+        `<h3>Thank you for your order!</h3>
+        <p><strong>Name:</strong> ${data.firstName} ${data.lastName}<br>
+        <strong>Address:</strong> ${data.address}, ${data.city}, ${data.country}<br>
+        <strong>Phone:</strong> ${data.phone}</p>
+        <p>Your order:</p>
+        <ul>` +
+        cart.map(item => `<li>${item.name} x${item.quantity} ${item.size ? '(Size: ' + item.size + ')' : ''}</li>`).join('') +
+        `</ul>
+        <p><strong>Shipping:</strong> 7.00 TND<br>
+        <strong>Total:</strong> ${(subtotal + 7).toFixed(2)} TND</p>
+        <p>We’ll contact you soon to confirm your order.</p>`;
+      confirmation.style.display = 'block';
+      this.style.display = 'none';
+      localStorage.removeItem('cart');
+    }
+  </script>
+</body>
+</html>
